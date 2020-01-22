@@ -2,67 +2,96 @@
   General
 ==============================================================================*/
 /*================ Colors ================*/
+$main: #1F1F1F;
+$text: #FFFFFF;
+
+$gray-darkest: #2F2F2F;
+$gray-dark: #454545;
+$gray-md: #747474;
+$gray-lt: #F7F7F7;
+
 /*================ Breakpoints ================*/
+$breakpoint: 768px;
+
 /*================ Fonts ================*/
+// Soleil Medium + Bold
 @import url("https://use.typekit.net/afg5jhn.css");
+
+// Avenir Next
 @font-face {
   font-family: 'Avenir Next';
-  src: url("../fonts/AvenirNext-Heavy.woff") format("woff");
-  font-weight: 900; }
+  src: url('../fonts/AvenirNext-Heavy.woff') format('woff');
+  font-weight: 900;
+}
 
 h1 {
   margin-top: 0;
   font-family: 'Avenir Next', sans-serif;
   font-size: 50px;
   line-height: 60px;
-  font-weight: 900; }
-  h1.large {
+  font-weight: 900;
+
+  &.large {
     font-size: 70px;
-    line-height: 90px; }
+    line-height: 90px;
+  }
+}
 
 h2 {
   margin-top: 0;
   font-family: 'Avenir Next', sans-serif;
   font-size: 35px;
   line-height: 44px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 h3 {
   margin-top: 0;
   font-family: 'Soleil', sans-serif;
   font-size: 28px;
   line-height: 40px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 h4 {
   margin-top: 0;
   font-family: 'Soleil', sans-serif;
   font-size: 28px;
-  line-height: 40px; }
+  line-height: 40px;
+}
 
 p {
   margin-top: 0;
   font-family: 'Soleil', sans-serif;
   font-size: 17px;
-  line-height: 23px; }
-  p.small {
+  line-height: 23px;
+
+  &.small {
     font-size: 14px;
-    line-height: 18px; }
-  p.large {
+    line-height: 18px;
+  }
+
+  &.large {
     font-size: 20px;
-    line-height: 25px; }
-  p.bold {
-    font-weight: bold; }
+    line-height: 25px;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+}
 
 /*================ Utility ================*/
 body {
-  background: #1F1F1F;
-  color: #FFFFFF; }
+  background: $main;
+  color: $text;
+}
 
 .page-width {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 50px; }
+  padding: 0 50px;
+}
 
 /*============================================================================
   Hero
@@ -70,10 +99,13 @@ body {
 .logo {
   padding: 20px 0;
   position: absolute;
-  top: 0; }
-  .logo img {
+  top: 0;
+
+  img {
     max-width: 55px;
-    width: 100%; }
+    width: 100%;
+  }
+}
 
 .hero {
   height: 100vh;
@@ -81,7 +113,8 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  position: relative; }
+  position: relative;
+}
 
 .hero__bg-container {
   height: 100%;
@@ -91,12 +124,14 @@ body {
   left: 0;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .hero__bg {
   height: 65%;
   width: 73%;
-  background-image: url("../images/pattern.png");
+  background-image: url('../images/pattern.png');
   background-size: cover;
   background-position: center;
-  opacity: .4; }
+  opacity: .4;
+}
