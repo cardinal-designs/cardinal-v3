@@ -2,13 +2,18 @@
   General
 ==============================================================================*/
 /*================ Colors ================*/
-$main: #1F1F1F;
+$main: #111111;
 $text: #FFFFFF;
 
 $gray-darkest: #2F2F2F;
 $gray-dark: #454545;
 $gray-md: #747474;
 $gray-lt: #F7F7F7;
+
+$color-1: #E91E63;
+$color-2: #03A9F4;
+$color-3: #2ecc71;
+$black: #000;
 
 /*================ Breakpoints ================*/
 $breakpoint: 768px;
@@ -24,12 +29,17 @@ $breakpoint: 768px;
   font-weight: 900;
 }
 
+body {
+  font-family: 'Soleil', sans-serif;
+}
+
 h1 {
   margin-top: 0;
   font-family: 'Avenir Next', sans-serif;
   font-size: 50px;
   line-height: 60px;
   font-weight: 900;
+  letter-spacing: 1.25px;
 
   &.large {
     font-size: 70px;
@@ -43,6 +53,7 @@ h2 {
   font-size: 35px;
   line-height: 44px;
   font-weight: bold;
+  letter-spacing: 1.25px;
 }
 
 h3 {
@@ -51,6 +62,7 @@ h3 {
   font-size: 28px;
   line-height: 40px;
   font-weight: bold;
+  letter-spacing: .8px;
 }
 
 h4 {
@@ -58,13 +70,16 @@ h4 {
   font-family: 'Soleil', sans-serif;
   font-size: 28px;
   line-height: 40px;
+  font-weight: bold;
+  letter-spacing: .8px;
 }
 
 p {
   margin-top: 0;
   font-family: 'Soleil', sans-serif;
   font-size: 17px;
-  line-height: 23px;
+  line-height: 25px;
+  letter-spacing: .5px;
 
   &.small {
     font-size: 14px;
@@ -79,6 +94,65 @@ p {
   &.bold {
     font-weight: bold;
   }
+
+  &.gray {
+    color: $gray-md;
+  }
+}
+
+/*================ Animations ================*/
+$base-duration: 200ms;
+$val1: 49.5%;
+$val2: 50%;
+$val3: 50.5%;
+
+@keyframes distort1 {
+  0%    { top: $val1; left: $val1; }
+  12.5% { top: $val1; left: $val2; }
+  25%   { top: $val1; left: $val3; }
+  37.5% { top: $val2; left: $val3; }
+  50%   { top: $val3; left: $val3; }
+  62.5% { top: $val3; left: $val2; }
+  75%   { top: $val3; left: $val1; }
+  87.5% { top: $val2; left: $val1; }
+  100%  { top: $val1; left: $val1; }
+}
+
+@keyframes distort2 {
+  0%    { top: $val3; left: $val3; }
+  12.5% { top: $val2; left: $val3; }
+  25%   { top: $val1; left: $val3; }
+  37.5% { top: $val1; left: $val2; }
+  50%   { top: $val1; left: $val1; }
+  62.5% { top: $val2; left: $val1; }
+  75%   { top: $val3; left: $val1; }
+  87.5% { top: $val3; left: $val2; }
+  100%  { top: $val3; left: $val3; }
+}
+/*================ Mixins ================*/
+@mixin glitch($text) {
+  position: relative;
+  &:before, &:after{
+    position: absolute;
+    content: '#{$text}';
+    width: 100%;
+    transform: translate(-$val2,-$val2);
+    z-index: -1;
+  }
+
+  &:before {
+    top: $val1;
+    left: $val1;
+    color: rgba($color-1,0.8);
+    animation: distort1 $base-duration linear infinite;
+  }
+
+  &:after {
+    top: $val2;
+    left: $val2;
+    color: rgba($color-2,0.8);
+    animation: distort2 $base-duration linear infinite;
+  }
 }
 
 /*================ Utility ================*/
@@ -91,6 +165,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px;
+}
+
+.index-section {
+  margin: 120px 0;
+}
+
+.header {
+  margin-bottom: 40px;
 }
 
 /*============================================================================
@@ -125,13 +207,263 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    .effect-1 {
+      @include glitch('We like Shopify,');
+    }
+
+    .effect-2 {
+      @include glitch('Like a lot.');
+    }
+  }
 }
 
 .hero__bg {
   height: 65%;
   width: 73%;
-  background-image: url('../images/pattern.png');
+  background-image: url('../images/pattern.svg');
   background-size: cover;
   background-position: center;
-  opacity: .4;
+  opacity: .5;
+}
+
+.hero__nav {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  right: -10%;
+  z-index: 99;
+
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .hero__nav--divider {
+    width: 50px;
+    margin: 0 10px;
+    border-bottom: 1px solid $text;
+  }
+}
+
+.hero__text {
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  
+  span {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+  }
+}
+
+/*============================================================================
+  What we Do
+==============================================================================*/
+.what-we-do:hover {
+  h1 {
+    @include glitch('What We Do');
+  }
+}
+
+.what-we-do__slide-container {
+  padding-right: 20px;
+  padding-left: 2px;
+
+  .bold {
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+}
+
+.what-we-do__icon {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 1px solid $text;
+}
+
+.what-we-do__arrows {
+  position: relative;
+  padding-top: 75px;
+  display: flex;
+  justify-content: flex-end;
+
+  .slick-arrow {
+    position: unset;
+    margin-left: 30px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+}
+
+/*============================================================================
+  About
+==============================================================================*/
+.about:hover {
+  h1 {
+    @include glitch('About Us');
+  }
+}
+
+.about__text {
+  padding-bottom: 80px;
+  display: flex;
+
+  h4 {
+    width: 45%;
+    padding-right: 40px;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin-bottom: 23px;
+  }
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px;
+}
+
+.about__employee {
+  h4 {
+    margin: 20px 0 5px;
+  }
+
+  a {
+    color: $gray-md;
+    text-decoration: underline;
+  }
+}
+
+.about__employee-image {
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: 110%;
+  background-position: center;
+  background-color: $gray-lt;
+}
+
+.about__employee--michael {
+  .about__employee-image {
+    background-image: url('../images/michael.png');
+  }
+
+  &:hover {
+    h4 {
+      @include glitch('Michael Tejada');
+    }
+  }
+}
+
+
+.about__employee--natalie {
+  .about__employee-image {
+    background-image: url('../images/natalie.png');
+  }
+
+  &:hover {
+    h4 {
+      @include glitch('Natalie Despain');
+    }
+  }
+}
+
+.about__employee--stephan {
+  .about__employee-image {
+    background-image: url('../images/michael.png');
+  }
+
+  &:hover {
+    h4 {
+      @include glitch('Stephan Holly');
+    }
+  }
+}
+
+/*============================================================================
+  Contact
+==============================================================================*/
+.contact:hover {
+  h1 {
+    @include glitch('Stay in touch');
+  }
+}
+
+.contact__container {
+  display: flex;
+  background: $gray-darkest;
+}
+
+.contact__pattern {
+  width: 50%;
+  background-image: url('../images/pattern.svg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: .5;
+  flex-shrink: 0;
+}
+
+.contact__form {
+  width: 100%;
+  padding: 80px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 7px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+    margin-bottom: 30px;
+    display: block;
+    background: $gray-dark;
+    font-size: 16px;
+    color: $gray-lt;
+    border: 0;
+    border-radius: 0;
+    resize: none;
+  }
+
+  .select-container {
+    background: $gray-dark;
+    margin-bottom: 30px;
+  }
+  
+  select {
+    height: 38px;
+    width: 100%;
+    margin: 0;
+  }
+
+  input[type="submit"] {
+    margin: 0;
+    padding: 12px 10px;
+    background: $gray-lt;
+    color: $main;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
