@@ -26,7 +26,7 @@ h1 {
 
 h2 {
   margin-top: 0;
-  font-family: 'Avenir Next', sans-serif;
+  font-family: 'Soleil', sans-serif;
   font-size: 35px;
   line-height: 44px;
   font-weight: bold;
@@ -129,6 +129,9 @@ p {
 body {
   background: #111111;
   color: #FFFFFF; }
+
+img {
+  max-width: 100%; }
 
 .page-width {
   max-width: 1200px;
@@ -289,6 +292,125 @@ body {
     cursor: pointer; }
 
 /*============================================================================
+  Work
+==============================================================================*/
+.work:hover .featured {
+  position: relative; }
+  .work:hover .featured:before, .work:hover .featured:after {
+    position: absolute;
+    content: "Featured Projects";
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1; }
+  .work:hover .featured:before {
+    top: 49.5%;
+    left: 49.5%;
+    color: rgba(233, 30, 99, 0.8);
+    animation: distort1 200ms linear infinite; }
+  .work:hover .featured:after {
+    top: 50%;
+    left: 50%;
+    color: rgba(3, 169, 244, 0.8);
+    animation: distort2 200ms linear infinite; }
+
+.work:hover .more {
+  position: relative; }
+  .work:hover .more:before, .work:hover .more:after {
+    position: absolute;
+    content: "More Projects";
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1; }
+  .work:hover .more:before {
+    top: 49.5%;
+    left: 49.5%;
+    color: rgba(233, 30, 99, 0.8);
+    animation: distort1 200ms linear infinite; }
+  .work:hover .more:after {
+    top: 50%;
+    left: 50%;
+    color: rgba(3, 169, 244, 0.8);
+    animation: distort2 200ms linear infinite; }
+
+.work__featured {
+  margin-bottom: 120px; }
+
+.work__featured-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px; }
+
+.work__featured-image {
+  width: 55%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 9; }
+  .work__featured-image img {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24); }
+
+.work__featured-header {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .work__featured-header h2, .work__featured-header i {
+    color: white; }
+  .work__featured-header i {
+    font-size: 22px; }
+
+.work__featured-content {
+  padding: 20px;
+  background: #2F2F2F; }
+  .work__featured-content p:not(.small) {
+    margin-bottom: 20px;
+    color: white; }
+
+.work__more {
+  display: flex;
+  flex-wrap: wrap; }
+
+.work__more-item {
+  width: 50%;
+  margin-bottom: 100px;
+  background: #2F2F2F;
+  position: relative; }
+
+.work__more-bg {
+  position: absolute;
+  width: 100%;
+  height: 175px;
+  background: #111111; }
+
+.work__more-image {
+  padding: 0 30px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 9; }
+  .work__more-image img {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24); }
+
+.work__more-header {
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .work__more-header h2, .work__more-header i {
+    color: white; }
+  .work__more-header i {
+    font-size: 22px; }
+
+.work__more-content {
+  padding: 5px 30px 30px;
+  background: #2F2F2F; }
+  .work__more-content p:not(.small) {
+    margin-bottom: 20px;
+    color: white; }
+
+/*============================================================================
   About
 ==============================================================================*/
 .about:hover h1 {
@@ -342,68 +464,11 @@ body {
 .about__employee--michael .about__employee-image {
   background-image: url("../images/michael.png"); }
 
-.about__employee--michael:hover h4 {
-  position: relative; }
-  .about__employee--michael:hover h4:before, .about__employee--michael:hover h4:after {
-    position: absolute;
-    content: "Michael Tejada";
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1; }
-  .about__employee--michael:hover h4:before {
-    top: 49.5%;
-    left: 49.5%;
-    color: rgba(233, 30, 99, 0.8);
-    animation: distort1 200ms linear infinite; }
-  .about__employee--michael:hover h4:after {
-    top: 50%;
-    left: 50%;
-    color: rgba(3, 169, 244, 0.8);
-    animation: distort2 200ms linear infinite; }
-
 .about__employee--natalie .about__employee-image {
   background-image: url("../images/natalie.png"); }
 
-.about__employee--natalie:hover h4 {
-  position: relative; }
-  .about__employee--natalie:hover h4:before, .about__employee--natalie:hover h4:after {
-    position: absolute;
-    content: "Natalie Despain";
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1; }
-  .about__employee--natalie:hover h4:before {
-    top: 49.5%;
-    left: 49.5%;
-    color: rgba(233, 30, 99, 0.8);
-    animation: distort1 200ms linear infinite; }
-  .about__employee--natalie:hover h4:after {
-    top: 50%;
-    left: 50%;
-    color: rgba(3, 169, 244, 0.8);
-    animation: distort2 200ms linear infinite; }
-
 .about__employee--stephan .about__employee-image {
-  background-image: url("../images/michael.png"); }
-
-.about__employee--stephan:hover h4 {
-  position: relative; }
-  .about__employee--stephan:hover h4:before, .about__employee--stephan:hover h4:after {
-    position: absolute;
-    content: "Stephan Holly";
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1; }
-  .about__employee--stephan:hover h4:before {
-    top: 49.5%;
-    left: 49.5%;
-    color: rgba(233, 30, 99, 0.8);
-    animation: distort1 200ms linear infinite; }
-  .about__employee--stephan:hover h4:after {
-    top: 50%;
-    left: 50%;
-    color: rgba(3, 169, 244, 0.8);
-    animation: distort2 200ms linear infinite; }
+  background-image: url("../images/stephan.png"); }
 
 /*============================================================================
   Contact
@@ -479,4 +544,6 @@ body {
     font-weight: bold;
     text-decoration: none;
     font-size: 12px;
-    line-height: 15px; }
+    line-height: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid #747474; }

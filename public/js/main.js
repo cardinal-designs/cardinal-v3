@@ -1,7 +1,34 @@
 $(document).ready(function() {
+  
+  // Scroll Reveal
+  // General
+  ScrollReveal().reveal('.header', {delay: 300, origin: 'bottom', distance: '20px', duration: '200'});
+
+  // Hero
+  ScrollReveal().reveal('.logo', {delay: 400});
+  ScrollReveal().reveal('.hero__bg', {delay: 400});
+  ScrollReveal().reveal('.hero__nav', {delay: 400});
+  ScrollReveal().reveal('.hero__text p', {delay: 400, origin: 'bottom', distance: '20px', duration: '200'});
+  ScrollReveal().reveal('.hero__text h1', {delay: 800, origin: 'bottom', distance: '20px', duration: '200'});
+
+  // What We Do
+  ScrollReveal().reveal('.what-we-do__slider', {delay: 600, origin: 'bottom', distance: '20px', duration: '200'});
+
+  // Work
+  ScrollReveal().reveal('.work__featured-item', {delay: 500, origin: 'bottom', distance: '20px', duration: '200'});
+  ScrollReveal().reveal('.work__more-item', {delay: 500, origin: 'bottom', distance: '20px', duration: '200'});
+  
+  // About Us
+  ScrollReveal().reveal('.about__text', {delay: 600});
+  ScrollReveal().reveal('.about__employee--michael', {delay: 400, origin: 'bottom', distance: '20px'});
+  ScrollReveal().reveal('.about__employee--natalie', {delay: 500, origin: 'bottom', distance: '20px'});
+  ScrollReveal().reveal('.about__employee--stephan', {delay: 600, origin: 'bottom', distance: '20px'});
+
+  // Contact
+  ScrollReveal().reveal('.contact__container', {delay: 600, origin: 'bottom', distance: '20px'});
 
   // Smooth Scroll
-    // Select all links with hashes
+  // Select all links with hashes
   $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')

@@ -49,7 +49,7 @@ h1 {
 
 h2 {
   margin-top: 0;
-  font-family: 'Avenir Next', sans-serif;
+  font-family: 'Soleil', sans-serif;
   font-size: 35px;
   line-height: 44px;
   font-weight: bold;
@@ -159,6 +159,10 @@ $val3: 50.5%;
 body {
   background: $main;
   color: $text;
+}
+
+img {
+  max-width: 100%;
 }
 
 .page-width {
@@ -305,6 +309,124 @@ body {
 }
 
 /*============================================================================
+  Work
+==============================================================================*/
+.work:hover {
+  .featured {
+    @include glitch('Featured Projects');
+  }
+
+  .more {
+    @include glitch('More Projects');
+  }
+}
+
+.work__featured {
+  margin-bottom: 120px;
+}
+
+.work__featured-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.work__featured-image {
+  width: 55%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 9;
+
+  img {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+  }
+}
+
+.work__featured-header {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  h2, i {
+    color: white;
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.work__featured-content {
+  padding: 20px;
+  background: $gray-darkest;
+  
+  p:not(.small) {
+    margin-bottom: 20px;
+    color: white;
+  }
+}
+
+.work__more {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work__more-item {
+  width: 50%;
+  margin-bottom: 100px;
+  background: $gray-darkest;
+  position: relative;
+}
+
+.work__more-bg {
+  position: absolute;
+  width: 100%;
+  height: 175px;
+  background: $main;
+}
+
+.work__more-image {
+  padding: 0 30px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 9;
+
+  img {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+  }
+}
+
+.work__more-header {
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  h2, i {
+    color: white;
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.work__more-content {
+  padding: 5px 30px 30px;
+  background: $gray-darkest;
+  
+  p:not(.small) {
+    margin-bottom: 20px;
+    color: white;
+  }
+}
+
+/*============================================================================
   About
 ==============================================================================*/
 .about:hover {
@@ -357,12 +479,6 @@ body {
   .about__employee-image {
     background-image: url('../images/michael.png');
   }
-
-  &:hover {
-    h4 {
-      @include glitch('Michael Tejada');
-    }
-  }
 }
 
 
@@ -370,23 +486,11 @@ body {
   .about__employee-image {
     background-image: url('../images/natalie.png');
   }
-
-  &:hover {
-    h4 {
-      @include glitch('Natalie Despain');
-    }
-  }
 }
 
 .about__employee--stephan {
   .about__employee-image {
-    background-image: url('../images/michael.png');
-  }
-
-  &:hover {
-    h4 {
-      @include glitch('Stephan Holly');
-    }
+    background-image: url('../images/stephan.png');
   }
 }
 
@@ -465,5 +569,7 @@ body {
     text-decoration: none;
     font-size: 12px;
     line-height: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid $gray-md;
   }
 }
