@@ -69,7 +69,28 @@ $(document).ready(function() {
     appendArrows: $('.what-we-do__arrows'),
     nextArrow: '<i class="fas fa-angle-right"></i>',
     prevArrow: '<i class="fas fa-angle-left"></i>',
-    slidesToShow: 4
+    slidesToShow: 4,
+    responsive: [
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true
+        }
+      }
+    ]
   });
 
 })

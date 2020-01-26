@@ -44,6 +44,16 @@ h1 {
   &.large {
     font-size: 70px;
     line-height: 90px;
+
+    @media screen and (max-width: $breakpoint) {
+      font-size: 36px;
+      line-height: 50px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    font-size: 30px;
+    line-height: 42px;
   }
 }
 
@@ -63,6 +73,11 @@ h3 {
   line-height: 40px;
   font-weight: bold;
   letter-spacing: .8px;
+
+  @media screen and (max-width: $breakpoint) {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 
 h4 {
@@ -72,6 +87,11 @@ h4 {
   line-height: 40px;
   font-weight: bold;
   letter-spacing: .8px;
+
+  @media screen and (max-width: $breakpoint) {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 
 p {
@@ -81,14 +101,27 @@ p {
   line-height: 25px;
   letter-spacing: .5px;
 
+  &.xsmall {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
   &.small {
     font-size: 14px;
     line-height: 18px;
+
+    @media screen and (max-width: $breakpoint) {
+      font-size: 12px;
+    }
   }
 
   &.large {
     font-size: 20px;
     line-height: 25px;
+
+    @media screen and (max-width: $breakpoint) {
+      font-size: 18px;
+    }
   }
 
   &.bold {
@@ -97,6 +130,11 @@ p {
 
   &.gray {
     color: $gray-md;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    font-size: 15px;
+    line-height: 21px;
   }
 }
 
@@ -169,14 +207,26 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px;
+
+  @media screen and (max-width: $breakpoint) {
+    padding: 0 20px;
+  }
 }
 
 .index-section {
-  margin: 120px 0;
+  margin: 125px 0;
+
+  @media screen and (max-width: $breakpoint) {
+    margin: 100px 0;
+  }
 }
 
 .header {
   margin-bottom: 40px;
+
+  @media screen and (max-width: $breakpoint) {
+    margin-bottom: 20px;
+  }
 }
 
 /*============================================================================
@@ -253,6 +303,16 @@ img {
     width: 50px;
     margin: 0 10px;
     border-bottom: 1px solid $text;
+
+    @media screen and (max-width: $breakpoint) {
+      width: 20px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    transform: unset;
+    top: 20px;
+    right: 0;
   }
 }
 
@@ -271,6 +331,19 @@ img {
 /*============================================================================
   What we Do
 ==============================================================================*/
+.what-we-do {
+  h1 {
+    @media screen and (max-width: $breakpoint) {
+      margin-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
 .what-we-do:hover {
   h1 {
     @include glitch('What We Do');
@@ -290,8 +363,17 @@ img {
 .what-we-do__icon {
   height: 120px;
   width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  border: 1px solid $text;
+  background: rgba(255, 255, 255, .025);
+
+  svg {
+    width: 40px;
+    height: auto;
+    fill: white;
+  }
 }
 
 .what-we-do__arrows {
@@ -303,8 +385,12 @@ img {
   .slick-arrow {
     position: unset;
     margin-left: 30px;
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding-right: 20px;
   }
 }
 
@@ -329,6 +415,16 @@ img {
   display: flex;
   align-items: center;
   margin-bottom: 100px;
+
+  &.reversed {
+    @media screen and (max-width: $breakpoint) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    flex-wrap: wrap;
+  }
 }
 
 .work__featured-image {
@@ -341,6 +437,10 @@ img {
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
     -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.24);
+  }
+
+  @media screen and (max-width: $breakpoint) {
+   width: 100%;
   }
 }
 
@@ -355,7 +455,7 @@ img {
   }
 
   i {
-    font-size: 22px;
+    font-size: 15px;
   }
 }
 
@@ -379,6 +479,11 @@ img {
   margin-bottom: 100px;
   background: $gray-darkest;
   position: relative;
+
+  @media screen and (max-width: $breakpoint) {
+    width: 100%;
+    margin-bottom: 75px;
+  }
 }
 
 .work__more-bg {
@@ -386,6 +491,10 @@ img {
   width: 100%;
   height: 175px;
   background: $main;
+
+  @media screen and (max-width: $breakpoint) {
+    height: 100px;
+  }
 }
 
 .work__more-image {
@@ -412,7 +521,11 @@ img {
   }
 
   i {
-    font-size: 22px;
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding: 5px 20px;
   }
 }
 
@@ -423,6 +536,10 @@ img {
   p:not(.small) {
     margin-bottom: 20px;
     color: white;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding: 5px 20px 20px;
   }
 }
 
@@ -443,10 +560,21 @@ img {
     width: 45%;
     padding-right: 40px;
     flex-shrink: 0;
+
+    @media screen and (max-width: $breakpoint) {
+      width: 100%;
+      margin-bottom: 25px;
+      padding: 0;
+    }
   }
 
   p {
     margin-bottom: 23px;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding-bottom: 75px;
+    flex-wrap: wrap;
   }
 }
 
@@ -454,6 +582,11 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px;
+
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
 }
 
 .about__employee {
@@ -506,6 +639,10 @@ img {
 .contact__container {
   display: flex;
   background: $gray-darkest;
+
+  @media screen and (max-width: $breakpoint) {
+    flex-wrap: wrap;
+  }
 }
 
 .contact__pattern {
@@ -516,6 +653,11 @@ img {
   background-color: rgba(0, 0, 0, .5);
   opacity: .5;
   flex-shrink: 0;
+
+  @media screen and (max-width: $breakpoint) {
+    width: 100%;
+    padding-bottom: 50%;
+  }
 }
 
 .contact__form {
@@ -571,5 +713,9 @@ img {
     line-height: 15px;
     cursor: pointer;
     border-bottom: 2px solid $gray-md;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding: 20px;
   }
 }

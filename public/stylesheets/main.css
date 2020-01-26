@@ -23,6 +23,14 @@ h1 {
   h1.large {
     font-size: 70px;
     line-height: 90px; }
+    @media screen and (max-width: 768px) {
+      h1.large {
+        font-size: 36px;
+        line-height: 50px; } }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+      line-height: 42px; } }
 
 h2 {
   margin-top: 0;
@@ -39,6 +47,10 @@ h3 {
   line-height: 40px;
   font-weight: bold;
   letter-spacing: .8px; }
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 22px;
+      line-height: 30px; } }
 
 h4 {
   margin-top: 0;
@@ -47,6 +59,10 @@ h4 {
   line-height: 40px;
   font-weight: bold;
   letter-spacing: .8px; }
+  @media screen and (max-width: 768px) {
+    h4 {
+      font-size: 22px;
+      line-height: 30px; } }
 
 p {
   margin-top: 0;
@@ -54,16 +70,29 @@ p {
   font-size: 17px;
   line-height: 25px;
   letter-spacing: .5px; }
+  p.xsmall {
+    font-size: 12px;
+    line-height: 18px; }
   p.small {
     font-size: 14px;
     line-height: 18px; }
+    @media screen and (max-width: 768px) {
+      p.small {
+        font-size: 12px; } }
   p.large {
     font-size: 20px;
     line-height: 25px; }
+    @media screen and (max-width: 768px) {
+      p.large {
+        font-size: 18px; } }
   p.bold {
     font-weight: bold; }
   p.gray {
     color: #747474; }
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 15px;
+      line-height: 21px; } }
 
 /*================ Animations ================*/
 @keyframes distort1 {
@@ -137,12 +166,21 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px; }
+  @media screen and (max-width: 768px) {
+    .page-width {
+      padding: 0 20px; } }
 
 .index-section {
-  margin: 120px 0; }
+  margin: 125px 0; }
+  @media screen and (max-width: 768px) {
+    .index-section {
+      margin: 100px 0; } }
 
 .header {
   margin-bottom: 40px; }
+  @media screen and (max-width: 768px) {
+    .header {
+      margin-bottom: 20px; } }
 
 /*============================================================================
   Hero
@@ -235,6 +273,14 @@ img {
     width: 50px;
     margin: 0 10px;
     border-bottom: 1px solid #FFFFFF; }
+    @media screen and (max-width: 768px) {
+      .hero__nav .hero__nav--divider {
+        width: 20px; } }
+  @media screen and (max-width: 768px) {
+    .hero__nav {
+      transform: unset;
+      top: 20px;
+      right: 0; } }
 
 .hero__text {
   width: 100%;
@@ -248,6 +294,15 @@ img {
 /*============================================================================
   What we Do
 ==============================================================================*/
+@media screen and (max-width: 768px) {
+  .what-we-do h1 {
+    margin-left: 20px; } }
+
+@media screen and (max-width: 768px) {
+  .what-we-do {
+    margin-left: -20px;
+    margin-right: -20px; } }
+
 .what-we-do:hover h1 {
   position: relative; }
   .what-we-do:hover h1:before, .what-we-do:hover h1:after {
@@ -277,8 +332,15 @@ img {
 .what-we-do__icon {
   height: 120px;
   width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  border: 1px solid #FFFFFF; }
+  background: rgba(255, 255, 255, 0.025); }
+  .what-we-do__icon svg {
+    width: 40px;
+    height: auto;
+    fill: white; }
 
 .what-we-do__arrows {
   position: relative;
@@ -288,8 +350,11 @@ img {
   .what-we-do__arrows .slick-arrow {
     position: unset;
     margin-left: 30px;
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer; }
+  @media screen and (max-width: 768px) {
+    .what-we-do__arrows {
+      padding-right: 20px; } }
 
 /*============================================================================
   Work
@@ -339,6 +404,12 @@ img {
   display: flex;
   align-items: center;
   margin-bottom: 100px; }
+  @media screen and (max-width: 768px) {
+    .work__featured-item.reversed {
+      flex-direction: column-reverse; } }
+  @media screen and (max-width: 768px) {
+    .work__featured-item {
+      flex-wrap: wrap; } }
 
 .work__featured-image {
   width: 55%;
@@ -349,6 +420,9 @@ img {
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24);
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.24); }
+  @media screen and (max-width: 768px) {
+    .work__featured-image {
+      width: 100%; } }
 
 .work__featured-header {
   padding: 5px 20px;
@@ -358,7 +432,7 @@ img {
   .work__featured-header h2, .work__featured-header i {
     color: white; }
   .work__featured-header i {
-    font-size: 22px; }
+    font-size: 15px; }
 
 .work__featured-content {
   padding: 20px;
@@ -376,12 +450,19 @@ img {
   margin-bottom: 100px;
   background: #2F2F2F;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .work__more-item {
+      width: 100%;
+      margin-bottom: 75px; } }
 
 .work__more-bg {
   position: absolute;
   width: 100%;
   height: 175px;
   background: #111111; }
+  @media screen and (max-width: 768px) {
+    .work__more-bg {
+      height: 100px; } }
 
 .work__more-image {
   padding: 0 30px;
@@ -401,7 +482,10 @@ img {
   .work__more-header h2, .work__more-header i {
     color: white; }
   .work__more-header i {
-    font-size: 22px; }
+    font-size: 15px; }
+  @media screen and (max-width: 768px) {
+    .work__more-header {
+      padding: 5px 20px; } }
 
 .work__more-content {
   padding: 5px 30px 30px;
@@ -409,6 +493,9 @@ img {
   .work__more-content p:not(.small) {
     margin-bottom: 20px;
     color: white; }
+  @media screen and (max-width: 768px) {
+    .work__more-content {
+      padding: 5px 20px 20px; } }
 
 /*============================================================================
   About
@@ -439,13 +526,26 @@ img {
     width: 45%;
     padding-right: 40px;
     flex-shrink: 0; }
+    @media screen and (max-width: 768px) {
+      .about__text h4 {
+        width: 100%;
+        margin-bottom: 25px;
+        padding: 0; } }
   .about__text p {
     margin-bottom: 23px; }
+  @media screen and (max-width: 768px) {
+    .about__text {
+      padding-bottom: 75px;
+      flex-wrap: wrap; } }
 
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px; }
+  @media screen and (max-width: 768px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+      grid-gap: 50px; } }
 
 .about__employee h4 {
   margin: 20px 0 5px; }
@@ -495,6 +595,9 @@ img {
 .contact__container {
   display: flex;
   background: #2F2F2F; }
+  @media screen and (max-width: 768px) {
+    .contact__container {
+      flex-wrap: wrap; } }
 
 .contact__pattern {
   width: 50%;
@@ -504,6 +607,10 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: .5;
   flex-shrink: 0; }
+  @media screen and (max-width: 768px) {
+    .contact__pattern {
+      width: 100%;
+      padding-bottom: 50%; } }
 
 .contact__form {
   width: 100%;
@@ -547,3 +654,6 @@ img {
     line-height: 15px;
     cursor: pointer;
     border-bottom: 2px solid #747474; }
+  @media screen and (max-width: 768px) {
+    .contact__form {
+      padding: 20px; } }
