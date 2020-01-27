@@ -294,11 +294,11 @@ img {
 /*============================================================================
   What we Do
 ==============================================================================*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .what-we-do h1 {
     margin-left: 20px; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .what-we-do {
     margin-left: -20px;
     margin-right: -20px; } }
@@ -352,7 +352,7 @@ img {
     margin-left: 30px;
     font-size: 30px;
     cursor: pointer; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 500px) {
     .what-we-do__arrows {
       padding-right: 20px; } }
 

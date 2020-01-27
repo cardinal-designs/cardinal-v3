@@ -333,12 +333,12 @@ img {
 ==============================================================================*/
 .what-we-do {
   h1 {
-    @media screen and (max-width: $breakpoint) {
+    @media screen and (max-width: 500px) {
       margin-left: 20px;
     }
   }
 
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: 500px) {
     margin-left: -20px;
     margin-right: -20px;
   }
@@ -389,7 +389,7 @@ img {
     cursor: pointer;
   }
 
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: 500px) {
     padding-right: 20px;
   }
 }
